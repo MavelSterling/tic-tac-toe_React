@@ -1,0 +1,134 @@
+/* src/App.css */
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #EAEEEE;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Estilos del juego */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 110%;
+}
+
+.game-info {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Tablero y casillas */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 70px); /* Establece un tamaño fijo de 80px para cada casilla */
+  grid-gap: 10px;
+  max-width: 110%;
+  width: 100%;
+}
+
+.square {
+  background: #ffffff;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80px; /* Establece el ancho de cada casilla en 80px */
+  height: 80px; /* Establece la altura de cada casilla en 80px */
+  user-select: none;
+}
+
+.square:hover {
+  background-color: #f0f0f0;
+}
+/* Estilos para el botón "Volver a Jugar" */
+.button-reset {
+  background: #54685D;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  margin-bottom: 10px; /* Agrega margen inferior para separar del botón de cambio de idioma */
+  /* Estilo inicial (cuando no se pasa el cursor sobre el botón) */
+  background-color: #54685D;
+}
+
+/* Estilo al pasar el cursor sobre el botón */
+.button-reset:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Escala ligeramente el botón al pasar el cursor */
+}
+
+/* Estilo al hacer clic en el botón */
+.button-reset:active {
+  background-color: #3e8e41;
+}
+/* Estilos para el botón "Idioma" */
+.button-lang {
+  background: #54685D;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.2s ease;
+  margin-right: 10px;
+  /* Estilo inicial (cuando no se pasa el cursor sobre el botón) */
+  background-color: #B2D7D8;
+}
+@media (max-width: 768px) {
+  .game-board {
+    grid-template-columns: repeat(3, 60px); /* Cambiar el tamaño en dispositivos móviles */
+  }
+
+  .square {
+    width: 60px; /* Cambiar el tamaño en dispositivos móviles */
+    height: 60px; /* Cambiar el tamaño en dispositivos móviles */
+  }
+}
+
+/* Estilos para el texto "Siguiente jugador:" */
+.next-player {
+  color: #2A4B5C ;
+  font-size: 24px;
+  transition: color 0.3s ease; /* Agregar transición al color */
+}
+
+/* Estilos para el texto "Siguiente jugador:" al pasar el cursor sobre él */
+.next-player:hover {
+  color: #33BBFF /* Cambiar el color al pasar el cursor */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Estilos para el título del juego */
+
+h1 {
+  animation: fadeIn 4s ease; /* Se aplica la animación "fadeIn" con una transición suave */
+}
